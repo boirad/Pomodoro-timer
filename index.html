@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+
+<body>
+    
+    <div id="container">
+
+        <h1 id="title">Pomodoro Timer</h1>
+
+        <div id="settings-container">
+            <div id="time-section">
+                <p class="title">Work</p>
+                <button id="time-plus" class="operator"><i class="fas fa-plus"></i></button>
+                <div id="time-set">25</div>
+                <button id="time-minus" class="operator"><i class="fas fa-minus"></i></button>
+            </div>
+
+            <div id="break-section">
+                <p class="title">Break</p>
+                <button id="break-plus" class="operator"><i class="fas fa-plus"></i></button>
+                <div id="break-set">5</div>
+                <button id="break-minus" class="operator"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+
+        <div id="counter-container">
+            <p id="time-counter">25:00</p>
+            <p id="message"></p>
+        </div>
+
+        <div id="action-container">
+            <button id="play" class="action"><i class="fas fa-play"></i></button>
+            <button id="pause" class="action"><i class="fas fa-pause"></i></button>
+            <button id="stop" class="action"><i class="fas fa-stop"></i></button>
+        </div>
+
+    </div>
+
+    <audio id="startBell" src="sound/start.mp3"></audio>
+    <audio id="pauseBell" src="sound/pause.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
