@@ -16,6 +16,7 @@ let isPlay;
 let isPause;
 let isBreakTime;
 let workInterval;
+let breakInterval;
 
 const playBtn = document.querySelector("#play");
 const pauseBtn = document.querySelector("#pause")
@@ -34,9 +35,8 @@ playBtn.addEventListener("click", () => {
 
 
 function WorkTimer(timerMinutes) {
+    let timer = timerMinutes - 1;
     startBell.play();
-    message.innerText = "Time to work!";
-    let timer = timerMinutes;
     workInterval = setInterval( () => {
         if(isPause){
             timer = currentTimer;
@@ -57,6 +57,8 @@ function WorkTimer(timerMinutes) {
         }
     return workInterval, timer;
     }, 1000);
+
+    message.innerText = "Time to work!";
 }
 
 
@@ -67,7 +69,7 @@ function breakTimer(breakMinutes) {
             playBtn.disabled = true;
             pauseBtn.disabled = true;
         }  
-    let timer = breakMinutes;
+    let timer = breakMinutes - 1;
     breakInterval = setInterval( () => {
         if(isPause){
             timer = currentTimer;
@@ -102,6 +104,8 @@ pauseBtn.addEventListener("click", () => {
     isPause = true;
     isPlay = false;
     playBtn.disabled = false;
+    clearInterval(workInterval)
+
 })
 
 stopBtn.addEventListener("click", () => {
